@@ -1,3 +1,4 @@
+%define		_snap	20031202
 Summary:	VideoLAN Server
 Summary(pl):	Serwer VideoLAN
 Name:		vls
@@ -5,10 +6,12 @@ Version:	0.5.3
 Release:	0.3
 License:	GPL
 Group:		Applications/Multimedia
-Source0:	http://www.videolan.org/pub/videolan/%{name}/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	63fb39e7312fdd87f27e2e4c99593143
+#Source0:	http://www.videolan.org/pub/videolan/%{name}/%{version}/%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}-%{_snap}.tar.gz
+# Source0-md5:	363971bcfab1d32a63794590eed1aa5c
 URL:		http://www.videolan.org/
 BuildRequires:	libdvbpsi-devel
+BuildRequires:	ffmpeg-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -56,9 +59,11 @@ using the DVB drivers from linuxtv.org.
 %setup -q
 
 %build
+./bootstrap #CVS snap specyfic
 %configure --enable-dvb \
 	--enable-v4l \
-	--with-libdvb=%{_libdir}
+	--with-libdvb=%{_libdir} \
+	--with-ffmpeg=%{_includedir}/ffmpeg #this don't work
 %{__make}
 
 %install

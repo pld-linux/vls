@@ -2,15 +2,17 @@ Summary:	VideoLAN Server
 Summary(pl):	VideoLAN Serwer
 Name:		vls
 Version:	0.5.3
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Multimedia
 ######		Unknown group!
 Source0:	http://www.videolan.org/pub/videolan/%{name}/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	63fb39e7312fdd87f27e2e4c99593143
 URL:		http://www.videolan.org/
-#BuildRequires:	-
-#Requires:	-
+BuildRequires:	libdvbpsi
+BuildRequires:	libdvdread-devel
+Requires:	libdvbpsi
+Requires:	libdvdread
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

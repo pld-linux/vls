@@ -3,15 +3,17 @@ Summary:	VideoLAN Server
 Summary(pl):	Serwer VideoLAN
 Name:		vls
 Version:	0.5.3
-Release:	0.3
+Release:	0.%{_snap}.3
 License:	GPL
 Group:		Applications/Multimedia
 #Source0:	http://www.videolan.org/pub/videolan/%{name}/%{version}/%{name}-%{version}.tar.gz
 Source0:	%{name}-%{version}-%{_snap}.tar.gz
 # Source0-md5:	363971bcfab1d32a63794590eed1aa5c
 URL:		http://www.videolan.org/
-BuildRequires:	libdvbpsi-devel
 BuildRequires:	ffmpeg-devel
+BuildRequires:	libdvb-devel
+BuildRequires:	libdvbpsi-devel
+BuildRequires:  libdvdread-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,39 +30,48 @@ trasmitowanym na ¿ywo po wysokoprzepustowej sieci IPv4 lub IPv6
 w trybie unicast lub multicast pod kontrol± wielu systemów
 operacyjnych.
 
-%package -n %{name}-dvd
-Summary:        DVD input for VideoLAN Server
-Group:          Application/Multimedia
-Requires:       libdvdread
-Requires:       %{name} = %{version}
-Buildrequires:  libdvdread-devel
+%package dvd
+Summary:	DVD input for VideoLAN Server
+Summary(pl):	Wej¶cie DVD dla serwera VideoLAN
+Group:		Application/Multimedia
+Requires:	%{name} = %{version}-%{release}
 
-%description -n %{name}-dvd
-The %{name}-dvd package includes the DVD input plugin for vls, the VideoLAN
-Server.
-With this plugin vls is able to read MPEG data from a DVD and send the
-stream to the network, together with all subtitles and audio tracks.
+%description dvd
+This package includes the DVD input plugin for vls, the VideoLAN
+Server. With this plugin vls is able to read MPEG data from a DVD and
+send the stream to the network, together with all subtitles and audio
+tracks.
 
-%package -n %{name}-dvb
-Summary:        DVB input for VideoLAN Server
-Group:          Application/Multimedia
-Requires:       %{name} = %{version}
-Buildrequires: libdvb-devel
+%description dvd -l pl
+Ten pakiet zawiera wtyczkê wej¶ciow± DVD dla vls - serwera VideoLAN.
+Przy pomocy tej wtyczki vls mo¿e odczytywaæ dane MPEG z DVD i wysy³aæ
+strumieñ w sieæ wraz z wszystkimi napisami i ¶cie¿kami d¼wiêkowymi.
 
-%description -n %{name}-dvb
-The %{name}-dvb package includes the DVB input plugin for the VideoLAN
-Server.
-It allows reception of digital unencrypted satellite channels and
-digital unencrypted terrestial television channels from a DVB device
-using the DVB drivers from linuxtv.org.
+%package dvb
+Summary:	DVB input for VideoLAN Server
+Summary(pl):	Wej¶cie DVB dla serwera VideoLAN
+Group:		Application/Multimedia
+Requires:	%{name} = %{version}-%{release}
 
+%description dvb
+This package includes the DVB input plugin for the VideoLAN Server. It
+allows reception of digital unencrypted satellite channels and digital
+unencrypted terrestial television channels from a DVB device using the
+DVB drivers from linuxtv.org.
+
+%description dvb -l pl
+Ten pakiet zawiera wtyczkê wej¶ciow± DVB dla serwera VideoLAN. Pozwala
+ona odbieraæ cyfrowe nieszyfrowane kana³y satelitarne i cyfrowe
+nieszyfrowane kana³y telewizji naziemnej z urz±dzenia DVB przy u¿yciu
+sterowników DVB z linuxtv.org.
 
 %prep
 %setup -q
 
 %build
 ./bootstrap #CVS snap specyfic
-%configure --enable-dvb \
+%configure \
+	--enable-dvb \
 	--enable-v4l \
 	--with-libdvb=%{_libdir} \
 	--with-ffmpeg=%{_includedir}/ffmpeg #this don't work
@@ -88,11 +99,11 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_sysconfdir}/videolan/%{name}
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/videolan/%{name}/%{name}.cfg
 
-%files -n %{name}-dvd
+%files dvd
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/videolan/%{name}/dvdreader.so
 
-%files -n %{name}-dvb
+%files dvb
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/videolan//%{name}/dvbinput.so
-%attr(755,root,root) %{_libdir}/videolan//%{name}/dvbreader.so
+%attr(755,root,root) %{_libdir}/videolan/%{name}/dvbinput.so
+%attr(755,root,root) %{_libdir}/videolan/%{name}/dvbreader.so

@@ -13,7 +13,7 @@ URL:		http://www.videolan.org/
 BuildRequires:	ffmpeg-devel
 BuildRequires:	libdvb-devel
 BuildRequires:	libdvbpsi-devel
-BuildRequires:  libdvdread-devel
+BuildRequires:	libdvdread-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

@@ -5,7 +5,7 @@ Version:	0.5.6
 Release:	1
 License:	GPL
 Group:		Applications/Multimedia
-Source0:	http://www.videolan.org/pub/videolan/%{name}/%{version}/%{name}-%{version}.tar.gz
+Source0:	http://download.videolan.org/pub/videolan/vls/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	2844d8780efd69cafc0be3b398b9553d
 URL:		http://www.videolan.org/
 BuildRequires:	ffmpeg-devel

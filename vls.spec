@@ -24,14 +24,13 @@ IPv4 or IPv6 network in unicast or multicast under many OSes.
 Projekt VideoLAN zajmuje siê multimedialnymi strumieniami MPEG-1,
 MPEG-2, MPEG-4 oraz plikami DivX, danymi DVD, cyfrowymi kana³ami
 satelitarnymi, cyfrowymi kana³ami telewizji naziemnej oraz obrazem
-trasmitowanym na ¿ywo po wysokoprzepustowej sieci IPv4 lub IPv6
-w trybie unicast lub multicast pod kontrol± wielu systemów
-operacyjnych.
+trasmitowanym na ¿ywo po wysokoprzepustowej sieci IPv4 lub IPv6 w
+trybie unicast lub multicast pod kontrol± wielu systemów operacyjnych.
 
 %package dvd
 Summary:	DVD input for VideoLAN Server
 Summary(pl):	Wej¶cie DVD dla serwera VideoLAN
-Group:		Application/Multimedia
+Group:		Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 
 %description dvd
@@ -48,7 +47,7 @@ strumieñ w sieæ wraz z wszystkimi napisami i ¶cie¿kami d¼wiêkowymi.
 %package dvb
 Summary:	DVB input for VideoLAN Server
 Summary(pl):	Wej¶cie DVB dla serwera VideoLAN
-Group:		Application/Multimedia
+Group:		Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 
 %description dvb
@@ -70,7 +69,7 @@ sterowników DVB z linuxtv.org.
 %configure \
 	--enable-dvb \
 	--enable-v4l \
-	--with-libdvb=%{_libdir} 
+	--with-libdvb=%{_libdir}
 %{__make}
 
 %install
@@ -87,13 +86,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO 
+%doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/videolan
 %dir %{_libdir}/videolan/%{name}
 %dir %{_sysconfdir}/videolan
 %dir %{_sysconfdir}/videolan/%{name}
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/videolan/%{name}/%{name}.cfg
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/videolan/%{name}/%{name}.cfg
 
 %files dvd
 %defattr(644,root,root,755)

@@ -1,5 +1,5 @@
 Summary:	VideoLAN Server
-Summary(pl.UTF-8):   Serwer VideoLAN
+Summary(pl.UTF-8):	Serwer VideoLAN
 Name:		vls
 Version:	0.5.6
 Release:	1
@@ -29,7 +29,7 @@ trybie unicast lub multicast pod kontrolą wielu systemów operacyjnych.
 
 %package dvd
 Summary:	DVD input for VideoLAN Server
-Summary(pl.UTF-8):   Wejście DVD dla serwera VideoLAN
+Summary(pl.UTF-8):	Wejście DVD dla serwera VideoLAN
 Group:		Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 
@@ -46,7 +46,7 @@ strumień w sieć wraz z wszystkimi napisami i ścieżkami dźwiękowymi.
 
 %package dvb
 Summary:	DVB input for VideoLAN Server
-Summary(pl.UTF-8):   Wejście DVB dla serwera VideoLAN
+Summary(pl.UTF-8):	Wejście DVB dla serwera VideoLAN
 Group:		Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 

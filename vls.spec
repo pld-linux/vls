@@ -1,5 +1,5 @@
 Summary:	VideoLAN Server
-Summary(pl):	Serwer VideoLAN
+Summary(pl.UTF-8):   Serwer VideoLAN
 Name:		vls
 Version:	0.5.6
 Release:	1
@@ -20,16 +20,16 @@ MPEG-4 and DivX files, DVDs, digital satellite channels, digital
 terrestial television channels and live videos on a high-bandwidth
 IPv4 or IPv6 network in unicast or multicast under many OSes.
 
-%description -l pl
-Projekt VideoLAN zajmuje siê multimedialnymi strumieniami MPEG-1,
-MPEG-2, MPEG-4 oraz plikami DivX, danymi DVD, cyfrowymi kana³ami
-satelitarnymi, cyfrowymi kana³ami telewizji naziemnej oraz obrazem
-trasmitowanym na ¿ywo po wysokoprzepustowej sieci IPv4 lub IPv6 w
-trybie unicast lub multicast pod kontrol± wielu systemów operacyjnych.
+%description -l pl.UTF-8
+Projekt VideoLAN zajmuje siÄ™ multimedialnymi strumieniami MPEG-1,
+MPEG-2, MPEG-4 oraz plikami DivX, danymi DVD, cyfrowymi kanaÅ‚ami
+satelitarnymi, cyfrowymi kanaÅ‚ami telewizji naziemnej oraz obrazem
+trasmitowanym na Å¼ywo po wysokoprzepustowej sieci IPv4 lub IPv6 w
+trybie unicast lub multicast pod kontrolÄ… wielu systemÃ³w operacyjnych.
 
 %package dvd
 Summary:	DVD input for VideoLAN Server
-Summary(pl):	Wej¶cie DVD dla serwera VideoLAN
+Summary(pl.UTF-8):   WejÅ›cie DVD dla serwera VideoLAN
 Group:		Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 
@@ -39,14 +39,14 @@ Server. With this plugin vls is able to read MPEG data from a DVD and
 send the stream to the network, together with all subtitles and audio
 tracks.
 
-%description dvd -l pl
-Ten pakiet zawiera wtyczkê wej¶ciow± DVD dla vls - serwera VideoLAN.
-Przy pomocy tej wtyczki vls mo¿e odczytywaæ dane MPEG z DVD i wysy³aæ
-strumieñ w sieæ wraz z wszystkimi napisami i ¶cie¿kami d¼wiêkowymi.
+%description dvd -l pl.UTF-8
+Ten pakiet zawiera wtyczkÄ™ wejÅ›ciowÄ… DVD dla vls - serwera VideoLAN.
+Przy pomocy tej wtyczki vls moÅ¼e odczytywaÄ‡ dane MPEG z DVD i wysyÅ‚aÄ‡
+strumieÅ„ w sieÄ‡ wraz z wszystkimi napisami i Å›cieÅ¼kami dÅºwiÄ™kowymi.
 
 %package dvb
 Summary:	DVB input for VideoLAN Server
-Summary(pl):	Wej¶cie DVB dla serwera VideoLAN
+Summary(pl.UTF-8):   WejÅ›cie DVB dla serwera VideoLAN
 Group:		Applications/Multimedia
 Requires:	%{name} = %{version}-%{release}
 
@@ -56,11 +56,11 @@ allows reception of digital unencrypted satellite channels and digital
 unencrypted terrestial television channels from a DVB device using the
 DVB drivers from linuxtv.org.
 
-%description dvb -l pl
-Ten pakiet zawiera wtyczkê wej¶ciow± DVB dla serwera VideoLAN. Pozwala
-ona odbieraæ cyfrowe nieszyfrowane kana³y satelitarne i cyfrowe
-nieszyfrowane kana³y telewizji naziemnej z urz±dzenia DVB przy u¿yciu
-sterowników DVB z linuxtv.org.
+%description dvb -l pl.UTF-8
+Ten pakiet zawiera wtyczkÄ™ wejÅ›ciowÄ… DVB dla serwera VideoLAN. Pozwala
+ona odbieraÄ‡ cyfrowe nieszyfrowane kanaÅ‚y satelitarne i cyfrowe
+nieszyfrowane kanaÅ‚y telewizji naziemnej z urzÄ…dzenia DVB przy uÅ¼yciu
+sterownikÃ³w DVB z linuxtv.org.
 
 %prep
 %setup -q

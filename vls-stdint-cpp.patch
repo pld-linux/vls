@@ -1,0 +1,20 @@
+--- vls-0.5.6/Makefile.opts.in	2003-02-03 23:02:56.000000000 +0100
++++ vls-0.5.6-own/Makefile.opts.in	2006-10-28 13:58:37.000000000 +0200
+@@ -76,6 +76,7 @@
+ CCFLAGS+=-Wall
+ CCFLAGS+=-D_REENTRANT
+ CCFLAGS+=-D_FILE_OFFSET_BITS=64
++CCFLAGS+=-D__STDC_LIMIT_MACROS #stdint requires this for use in c++ code
+ LCFLAGS+=-D_REENTRANT
+ 
+ #
+--- vls-0.5.6/src/modules/dvdreader/dvdreader.cpp	2002-09-04 12:56:34.000000000 +0200
++++ vls-0.5.6-own/src/modules/dvdreader/dvdreader.cpp	2006-10-28 14:16:23.000000000 +0200
+@@ -34,6 +34,7 @@
+ 
+ #include "../../core/iso_lang.h"
+ 
++#include <stdint.h>
+ #include <dvdread/dvd_reader.h>
+ #include <dvdread/ifo_types.h>
+ #include <dvdread/ifo_read.h>

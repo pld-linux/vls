@@ -7,11 +7,13 @@ License:	GPL
 Group:		Applications/Multimedia
 Source0:	http://download.videolan.org/pub/videolan/vls/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	2844d8780efd69cafc0be3b398b9553d
+Patch0:		%{name}-stdint-cpp.patch
 URL:		http://www.videolan.org/
 BuildRequires:	ffmpeg-devel
 BuildRequires:	libdvb-devel
 BuildRequires:	libdvbpsi-devel
 BuildRequires:	libdvdread-devel
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -64,6 +66,7 @@ sterowników DVB z linuxtv.org.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
